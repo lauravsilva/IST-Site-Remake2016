@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>IST Department at RIT</title>
+
+        <!--[if lt IE 9]>
+<script>
+document.createElement('video');
+</script>
+<![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/materialize.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/tablesorter.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+
+        <script src="https://code.jquery.com/jquery-latest.js" type="text/javascript">
+        </script>
+        <script src="assets/js/jquery-ui.min.js">
+        </script>
+
+        <script src="assets/js/utilities.js" type="text/javascript"></script>
+        <script src="assets/js/functions.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            //api:  http://www.ist.rit.edu/api/
+            $(document).ready(function(){
+
+                // Responsive Nav
+                $(".button-collapse").sideNav();
+
+                getAbout();
+                getUndergradDegrees();
+                getGradDegrees();
+                getMinors();
+                //                getCourses();
+                getEmployment();
+                getPeople();
+                getResearchInterest();
+                getResearchFaculty();
+                //                getNews();
+                getFooter();
+                getResources();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper persimmon">
+                    <span class="  hide-on-small-only">
+                        <a href="#!" class="brand-logo header-rit"></a>
+                    </span>
+                    <span class="hide-on-med-and-up">
+                        <a href="#!" class="header-title">IST Department at RIT</a>
+                    </span>
+
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-bars hamburger" aria-hidden="true"></i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="scrollAbout">About</a></li>
+                        <li><a href="#" class="scrollDegrees">Degrees</a></li>
+                        <li><a href="#" class="scrollMinors">Minors</a></li>
+                        <li><a href="#" class="scrollEmployment">Employment</a></li>
+                        <li><a href="#" class="scrollPeople">People</a></li>
+                        <li><a href="#" class="scrollResearch">Research</a></li>
+                        <li><a href="#" class="scrollResources">Resources</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="#" class="scrollAbout">About</a></li>
+                        <li><a href="#" class="scrollDegrees">Degrees</a></li>
+                        <li><a href="#" class="scrollMinors">Minors</a></li>
+                        <li><a href="#" class="scrollEmployment">Employment</a></li>
+                        <li><a href="#" class="scrollPeople">People</a></li>
+                        <li><a href="#" class="scrollResearch">Research</a></li>
+                        <li><a href="#" class="scrollResources">Resources</a></li>
+                    </ul>                
+                </div>
+            </nav>
+        </div>
+
+        <div class="container container-main">
+            <div id="intro" class="panel">
+                <video autoplay loop class="responsive-video" id="mainvideo">
+                    <source src="assets/img/497632384.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                </div>
+                <div class="col s12">
+                    <h1 class="ist-title">Information Sciences <br/> &amp; Technology @ RIT</h1>
+                </div>
+            </div>
+
+            <section class="panel about">
+                <div class="container">
+                    <div class="row"> 
+                        <div id="about" class="col s12">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel undergrad-degrees">
+                <div class="container">
+                    <div class="col s12 clearfix">
+                        <h2>Undergraduate Degrees</h2>
+                    </div>
+                    <div class="row">
+                        <div id="undergrad-degrees">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel grad-degrees">
+                <div class="container">
+                    <div class="col s12  clearfix">
+                        <h2>Graduate Degrees</h2>
+                    </div>
+                    <div class="row">
+                        <div id="grad-degrees">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel undergrad-minors">
+                <div class="container">
+                    <h2>Minors</h2>
+                    <div class="row">
+                        <div id="undergrad-minors">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--
+
+<section class="panel course">
+<div class="container">
+<div class="row">
+<div id="course">
+
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="panel courses">
+<div class="container">
+<div class="row">
+<div id="courses">
+
+</div>
+</div>
+</div>
+</section>
+-->
+
+
+            <section class="panel employment">
+                <div class="container">
+                    <div class="row">
+                        <div id="employment">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel students-work">
+                <div class="container">
+                    <div class="row">
+                        <div id="students-work">
+                            <div class="row">
+                                <div class="col s12">
+                                    <h2>Where Our Students Work</h2>
+                                    <p class="center-align hide-on-small-only">Click a marker to learn more about the jobs at that location</p>
+                                    <iframe class="map hide-on-small-only" src="http://www.ist.rit.edu/api/map/"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12">
+                                    <p class="center-align">To view employment and coop history of our students, click below.</p>
+
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#coopTable"  onclick="getCoopTable()"> 
+                                        Coop Table
+                                    </a>
+
+                                    <a class="waves-effect waves-light btn modal-trigger" href="#employmentTable" onclick="getEmploymentTable()"> 
+                                        Employment Table
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="modal" id="coopTable">
+                                <span class="right">
+                                    <a href="#!" class="modal-action modal-close x-close"><i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                                <div class="modal-content" id="coopTable-content">
+                                </div>
+                            </div>
+
+                            <div class="modal" id="employmentTable">
+                                <span class="right">
+                                    <a href="#!" class="modal-action modal-close x-close"><i class="fa fa-times" aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                                <div class="modal-content" id="employmentTable-content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="panel people">
+                <div class="container">
+                    <div class="row">
+                        <div id="people">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="panel research">
+                <div class="container">
+                    <h2>Research</h2>
+                    <div class="row">
+                        <div class="col s12">
+                            <h3>Faculty Research: Areas of Interest</h3>
+                            <p class="center-align">Click the area you're interested in to explore our faculty publications</p>
+                        </div>
+                        <div id="research-area">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <h3>Faculty Research: Lookup by Faculty</h3>
+                            <p class="center-align">Click the faculty memeber to explore their recent publications</p>
+                        </div>
+                        <div id="research-faculty">
+
+                        </div>
+                    </div>
+                </div>
+            </section>                            
+
+
+            <section class="panel resources">
+                <div class="container">
+                    <div class="row">
+                        <div id="resources">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--
+
+<section class="panel news">
+<div class="container">
+<div class="row">
+<div id="news">
+
+</div>
+</div>
+</div>
+</section>
+-->
+
+
+            <footer class="page-footer persimmon">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12" id="footer-left">
+
+                        </div>
+                        <div class="col l4 offset-l2 s12" id="footer-right">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright" id="footer-bottom">
+
+                </div>
+            </footer>
+
+
+            <!--
+<div id="contact-form">
+<iframe class="contact" src="http://www.ist.rit.edu/api/contactForm/"></iframe>
+</div>
+-->
+
+
+        </div> <!-- End main container-->
+
+
+
+
+        <script src="assets/js/smooth-scroll.js"></script>
+        <script src="assets/js/jquery.stickytableheaders.js"></script>
+        <script src="assets/js/jquery.tablesorter.js"></script>
+        <script src="assets/js/materialize.min.js"></script>
+        <script>
+
+            $('.modal-trigger').leanModal();
+
+            $('.scrollAbout').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.about'
+                });
+                return false;
+            });
+
+            $('.scrollDegrees').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.undergrad-degrees'
+                });
+                return false;
+            });
+
+            $('.scrollMinors').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.undergrad-minors'
+                });
+                return false;
+            });
+
+            $('.scrollEmployment').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.employment'
+                });
+                return false;
+            });
+
+            $('.scrollPeople').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.people'
+                });
+                return false;
+            });
+
+            $('.scrollResearch').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.research'
+                });
+                return false;
+            });
+
+            $('.scrollResources').on('click', function() {
+                $.smoothScroll({
+                    scrollElement: $('html, body'),
+                    scrollTarget: '.resources'
+                });
+                return false;
+            });
+        </script>
+
+    </body>
+</html>
