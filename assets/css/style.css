@@ -218,6 +218,23 @@ nav .button-collapse i {
     font-size: 2rem;
 }
 
+.side-nav {
+    background-color: #FF5F47;
+}
+
+.side-nav a {
+    color: white;
+}
+
+.side-nav li {
+    line-height: 80%;
+    height: 51px;
+}
+
+.side-nav li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
 /* About */
 .ist-title {
     font-size: 5vw;

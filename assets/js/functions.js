@@ -24,7 +24,7 @@ function getUndergradDegrees(){
             x += '<div class="col s12 m6 l4">';
             x += '<div class="card small"><div class="card-image waves-effect waves-block waves-light"><i class="fa ' + iconsArray[i] + ' activator fa-5x" aria-hidden="true"></i></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">';
             x += '<h4 class="degree-name activator">' + this.title + '</h4>';
-            x += '<span class="click-more"><i class="fa fa-plus" aria-hidden="true"></i><p>click to find out more</p></span><p class="learn-more">To learn more about this degree, visit our website: <a href="' + webArray[i] + '">' + webArray[i] + '</a></p></div><div class="card-reveal"><i class="fa fa-times right activator" aria-hidden="true"></i><span class="card-title tangerine-text">' + this.title + '</span>';
+            x += '<span class="click-more"><i class="fa fa-plus" aria-hidden="true"></i><p>click to find out more</p></span><p class="learn-more">To learn more about this degree, visit our website: <a href="' + webArray[i] + '">' + webArray[i] + '</a></p></div><div class="card-reveal"><span class="card-title tangerine-text">' + this.title + '</span>';
             x += '<p class="degree-description">' + this.description + '</p>';
             x += '<p class="center-align"><strong>Concentrations:</strong></p>';
             x += '<ul class="degree-concentration-list">';
@@ -104,7 +104,7 @@ function getMinors(){
 function getMinorInfo(dom){
     var minorName = '#'+$(dom).attr('data-minor');
 
-    myXhr('get', {path:'/minors/name=' + $(dom).attr('data-minor')}, minorName+'-content').done(function(json){
+    myXhr('get', {path:'/minors/UgMinors/name=' + $(dom).attr('data-minor')}, minorName+'-content').done(function(json){
         var x = '';
         x += '<h3 class="tangerine-text"> Minor: ' + json.title + '</h3>';
         x += '<p>' + json.description + '</p>';
